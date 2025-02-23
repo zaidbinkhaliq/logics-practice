@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+
+<body>
+
+    <h2>This is a code 05 in logics building series</h2>
+
+    <div>
+
+
+        <button onclick="playGame('Rock') ">Rock</button>
+        <button onclick="playGame('Paper') ">Paper</button>
+        <button onclick="playGame('Scissor') ">Scissor</button>
+
+    </div>
+
+    <div id="results">Results</div>
+
+
+    <script>
+        // Player winner selection
+
+        function determineWinner(Player1, Player2) {
+
+            if (Player1 === Player2) {
+
+                return "The game is tied"
+            }
+
+            else if ((Player1 === "Rock" && Player2 === "Scissor") || (Player1 === "Scissor" && Player2 === "Paper") || (Player1 === "Paper" && Player2 === "Rock")) {
+
+                return "Player 1 wins"
+
+            }
+            else {
+
+                return "Player 2 wins"
+            }
+
+        }
+
+        // Player 1 computer
+
+        function computerChoice() {
+
+
+            const choices = ['Rock', 'Paper', 'Scissor'];
+            const randomIndex = Math.floor((Math.random() * 3));
+            return choices[randomIndex]
+
+
+        }
+
+        // Player 2 is human
+
+        function playGame(Player1) {
+
+
+            const Player2 = computerChoice();
+            const result = determineWinner(Player1, Player2);
+
+
+
+            document.getElementById("results").innerHTML = `
+                Player 1 chose: ${Player1}<br>
+                Player 2 (Computer) chose: ${Player2}<br>
+                Result: ${result}`;
+
+        }
+
+
+ 
+
+    </script>
+
+</body>
+
+</html>
