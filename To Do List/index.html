@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    
+    <h2>This is a code 07 in logics building series</h2>
+
+    <input type="text" placeholder="Enter your task">
+    <button onclick="addTask()"> Add Task </button>
+
+    <ul>
+        Tasks:
+
+        <div id="results"></div>
+
+    </ul>
+
+
+    <script>
+
+        let toDoList = [];
+
+        function addTask(){
+
+
+            const taskInput = document.getElementById('taskInput') 
+            const task = taskInput.value.trim();
+
+            if(task){
+            toDoList.push(task);
+            taskInput.value = '';
+            updateTaskList();
+
+
+            }
+            else{
+
+                alert ("Enter a task");
+            }
+
+        }
+
+
+    </script>
+
+</body>
+</html>
