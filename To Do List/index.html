@@ -44,6 +44,28 @@
 
         }
 
+        function removeTask(index){
+
+            toDoList.splice(index, 1)
+            updateTaskList();
+
+
+        }
+
+        function updateTaskList(){
+
+            const taskList = document.getElementById('taskList')
+            taskList.innerHTML
+        }
+
+        toDoList.forEach((task,index)=>{
+
+             const li = document.getElementById('li')
+             li.textContent = task;
+
+
+             
+        })
 
     </script>
 
